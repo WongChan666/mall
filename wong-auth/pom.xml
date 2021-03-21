@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.wong</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+        <artifactId>shoopingmall</artifactId>
+    </parent>
+    <groupId>com.wong</groupId>
+    <artifactId>wong-auth</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>wong-auth</name>
+    <description>认证中心</description>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
