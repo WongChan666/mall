@@ -5,15 +5,12 @@
     <parent>
         <groupId>com.wong</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <artifactId>shoopingmall</artifactId>
+        <artifactId>shopingmall</artifactId>
     </parent>
-    <artifactId>wong-dependency</artifactId>
+    <artifactId>mall-commons</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>wong-dependency</name>
-    <description>公共依赖管理</description>
-
-    <dependencies>
-    </dependencies>
+    <name>mall-commons</name>
+    <description>公共代码</description>
 
     <build>
         <plugins>

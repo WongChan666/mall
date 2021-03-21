@@ -5,14 +5,20 @@
     <parent>
         <groupId>com.wong</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <artifactId>shoopingmall</artifactId>
+        <artifactId>shopingmall</artifactId>
     </parent>
     <artifactId>wong-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>wong-gateway</name>
     <description>网关服务</description>
 
+
     <dependencies>
+        <!-- nacos discovery -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
