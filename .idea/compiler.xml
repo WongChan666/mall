@@ -2,15 +2,16 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="wong-gateway" />
         <module name="wong-auth" />
-        <module name="mall-commons" />
+        <module name="wong-gateway" />
         <module name="mall" />
         <module name="wong-base" />
+        <module name="mall-commons" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

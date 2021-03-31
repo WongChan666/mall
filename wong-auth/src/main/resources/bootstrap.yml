@@ -1,0 +1,18 @@
+server:
+  port: 7000
+spring:
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        group: DEFAULT
+  application:
+    name: wong-auth
+mall:
+  auth:
+    clientId: admin-app
+    clientSecret: 123456
+    grantType: password
+logging:
+  level:
+    org.springframework.security: debug
