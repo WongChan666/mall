@@ -2,7 +2,6 @@ package com.wong.shopingmall.auth.service;
 
 import com.wong.shopingmall.auth.entity.SecurityUser;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

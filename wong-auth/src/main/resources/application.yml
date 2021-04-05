@@ -16,3 +16,10 @@ mall:
 logging:
   level:
     org.springframework.security: debug
+encrypt:
+  key-store:
+    location: classpath:jwt.jks
+    secret: 123456
+    alias: jwt.jks
+    password: 123456
+    type: jks
