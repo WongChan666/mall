@@ -3,9 +3,7 @@ package com.wong.shopingmall.auth.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.wong.shopingmall.auth.constants.AuthConstant;
 import com.wong.shopingmall.auth.utils.VerifyCode;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
@@ -31,6 +29,7 @@ import java.util.Map;
  * @date ：Created in 2021/3/23 22:50
  * @description：登录授权控制器
  */
+@Api(tags = "登录授权管理")
 @Controller
 public class LoginController {
 
@@ -40,7 +39,7 @@ public class LoginController {
     private TokenEndpoint tokenEndpoint;
 
 
-    @ApiOperation("Oauth2获取token")
+    @ApiOperation("oauth2获取token")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "grant_type", value = "授权模式", required = true),
             @ApiImplicitParam(name = "client_id", value = "Oauth2客户端ID", required = true),
@@ -50,7 +49,7 @@ public class LoginController {
             @ApiImplicitParam(name = "password", value = "登录密码")
     })
     @ResponseBody
-    @RequestMapping(value = "/token", method = RequestMethod.POST)
+    @PostMapping(value = "/oauth/token")
     public JSONObject postAccessToken(@ApiIgnore Principal principal, @ApiIgnore @RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
         OAuth2AccessToken oAuth2AccessToken = tokenEndpoint.postAccessToken(principal, parameters).getBody();
         Assert.notNull(oAuth2AccessToken,"获取token异常");

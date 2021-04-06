@@ -10,8 +10,20 @@
     <artifactId>mall-commons</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>mall-commons</name>
+    <packaging>pom</packaging>
     <description>公共代码</description>
 
+
+    <dependencies>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>

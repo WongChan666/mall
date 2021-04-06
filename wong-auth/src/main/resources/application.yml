@@ -13,6 +13,18 @@ mall:
     clientId: admin-app
     clientSecret: 123456
     grantType: password
+    ignore:
+      urls:
+        - "/doc.html"
+        - "/swagger-ui.html"
+        - "/swagger-resources/**"
+        - "/swagger/**"
+        - "/**/v2/api-docs"
+        - "/**/*.js"
+        - "/**/*.css"
+        - "/**/*.png"
+        - "/**/*.ico"
+        - "/webjars/**"
 logging:
   level:
     org.springframework.security: debug

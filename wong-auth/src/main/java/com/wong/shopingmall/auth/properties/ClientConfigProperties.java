@@ -1,5 +1,6 @@
 package com.wong.shopingmall.auth.properties;
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
  * @date ：Created in 2021/3/27 13:05
  * @description：授权客户端配置
  */
+@Data
 @Component
 @ConfigurationProperties(prefix = "mall.auth")
 public class ClientConfigProperties {
