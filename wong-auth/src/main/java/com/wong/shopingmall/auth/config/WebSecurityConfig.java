@@ -27,8 +27,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
                 .antMatchers("/rsa/publicKey").permitAll()
                 .antMatchers("/v2/api-docs").permitAll()
-                .antMatchers("/login/verify_code").permitAll()
-                .antMatchers(ignoreProperties.getUrls()).permitAll()
                 .anyRequest().authenticated();
         http.csrf().disable();
     }

@@ -6,7 +6,10 @@ import com.wong.shopingmall.auth.utils.VerifyCode;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.endpoint.TokenEndpoint;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.stereotype.Controller;
@@ -49,8 +52,8 @@ public class LoginController {
             @ApiImplicitParam(name = "password", value = "登录密码")
     })
     @ResponseBody
-    @PostMapping(value = "/oauth/token")
-    public JSONObject postAccessToken(@ApiIgnore Principal principal, @ApiIgnore @RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
+    @RequestMapping(value = "/oauth/token", method=RequestMethod.POST)
+    public JSONObject postAccessToken(@ApiIgnore Authentication principal, @ApiIgnore @RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
         OAuth2AccessToken oAuth2AccessToken = tokenEndpoint.postAccessToken(principal, parameters).getBody();
         Assert.notNull(oAuth2AccessToken,"获取token异常");
         JSONObject result = new JSONObject();

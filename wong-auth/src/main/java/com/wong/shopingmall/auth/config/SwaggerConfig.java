@@ -16,7 +16,7 @@ public class SwaggerConfig extends BaseSwaggerConfig {
 
     @Override
     public SwaggerProperties swaggerProperties() {
-        SwaggerProperties build = SwaggerProperties.builder()
+        return SwaggerProperties.builder()
                 .title("权限管理中心")
                 .apiBasePackage("com.wong.shopingmall.auth.controller")
                 .version("1.0.0")
@@ -25,6 +25,5 @@ public class SwaggerConfig extends BaseSwaggerConfig {
                 .description("mall微服务架构权限控制中心web接口文档")
                 .enableSecurity(true)
                 .build();
-        return build;
     }
 }

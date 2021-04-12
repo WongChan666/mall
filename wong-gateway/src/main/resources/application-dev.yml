@@ -1,0 +1,26 @@
+server:
+  port: 80
+spring:
+  application:
+    name: wong-gateway
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+    gateway:
+      routes: #配置路由规则
+        - id: wong-auth
+          uri: lb://mall-oauth2-api
+          predicates:
+            - Path=/auth/** #url匹配规则
+          filters:
+            - StripPrefix=1 #去掉前缀
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: localhost:7000/auth/rsa/publicKey #配置RSA的公钥访问地址
+  redis:
+    database: 0
+    port: 6379
+    host: localhost
+    password:
