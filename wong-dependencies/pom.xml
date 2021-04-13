@@ -27,6 +27,8 @@
         <swagger-version>2.9.2</swagger-version>
         <swagger-ui.version>1.9.6</swagger-ui.version>
         <hutool-all.version>5.5.9</hutool-all.version>
+        <hutool-core.version>4.3.0</hutool-core.version>
+        <hutool-json.version>4.1.8</hutool-json.version>
         <commons-lang3.version>3.10</commons-lang3.version>
         <commons-beanutils.version>1.9.3</commons-beanutils.version>
         <lombok-version>1.18.12</lombok-version>
@@ -118,6 +120,16 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool-all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-json</artifactId>
+                <version>${hutool-json.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>

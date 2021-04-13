@@ -1,4 +1,4 @@
-package com.wong.shopingmall.auth.constants;
+package com.wong.shopingmall.commons.constant;
 
 /**
  * @author ：Wong

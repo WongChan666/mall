@@ -1,15 +1,12 @@
 package com.wong.shopingmall.auth.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.wong.shopingmall.auth.constants.AuthConstant;
+import com.wong.shopingmall.commons.constant.AuthConstant;
 import com.wong.shopingmall.auth.utils.VerifyCode;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.endpoint.TokenEndpoint;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.stereotype.Controller;
@@ -53,7 +50,7 @@ public class LoginController {
     })
     @ResponseBody
     @RequestMapping(value = "/oauth/token", method=RequestMethod.POST)
-    public JSONObject postAccessToken(@ApiIgnore Authentication principal, @ApiIgnore @RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
+    public JSONObject postAccessToken(@ApiIgnore Principal principal, @ApiIgnore @RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
         OAuth2AccessToken oAuth2AccessToken = tokenEndpoint.postAccessToken(principal, parameters).getBody();
         Assert.notNull(oAuth2AccessToken,"获取token异常");
         JSONObject result = new JSONObject();
