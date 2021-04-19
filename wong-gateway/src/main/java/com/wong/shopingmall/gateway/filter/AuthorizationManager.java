@@ -4,6 +4,7 @@ import cn.hutool.json.JSONUtil;
 import com.nimbusds.jose.JWSObject;
 import com.nimbusds.jose.Payload;
 import com.wong.shopingmall.commons.constant.AuthConstant;
+import com.wong.shopingmall.commons.entity.UserDto;
 import net.minidev.json.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,7 +86,7 @@ public class AuthorizationManager implements ReactiveAuthorizationManager<Author
             JWSObject jwsObject = JWSObject.parse(realToken);
             //负荷，负载信息
             String payload = jwsObject.getPayload().toString();
-            JSONUtil.toBean(payload,SecurityUser.class);
+            UserDto userDto = JSONUtil.toBean(payload, UserDto.class);
         }catch (Exception e){
             e.printStackTrace();
         }
